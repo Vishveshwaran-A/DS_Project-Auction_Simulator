@@ -1,0 +1,20 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build and Run C++",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-Command",
+        "g++ -g \"${file}\" -o \"${fileDirname}\\${fileBasenameNoExtension}.exe\"; Start-Process -NoNewWindow -Wait \"${fileDirname}\\${fileBasenameNoExtension}.exe\""
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$gcc"],
+      "detail": "Compile and run current C++ file"
+    }
+  ]
+}
